@@ -1,0 +1,45 @@
+<!--
+1. Desarrollar una página web utilizando HTML y JavaScript que contenga un formulario para realizar 
+operaciones entre dos números ingresados mediante campos <input>. La operación a realizar 
+(suma, resta, multiplicación o división) debe seleccionarse mediante un elemento <select>. Al hacer 
+clic en el botón "Calcular", se debe ejecutar la operación seleccionada y mostrar el resultado. 
+Condición especial: Si el usuario selecciona la operación de división, el botón "Calcular" debe 
+deshabilitarse, impidiendo que se realice la operación.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+    <!-- Enlace al archivo CSS para estilos -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h2>Calculadora</h2>
+    <!-- Formulario para ingresar números y seleccionar operación -->
+    <input type="number" id="num1" placeholder="Número 1">
+    <input type="number" id="num2" placeholder="Número 2">
+    
+    <!--- Select para elegir la operación -->
+    <select id="operacion" onchange="verificarOperacion()">
+      <option value="sumar">Sumar</option>
+      <option value="restar">Restar</option>
+      <option value="multiplicar">Multiplicar</option>
+      <option value="dividir">Dividir</option>
+    </select>
+    
+    <!-- Botón para calcular -->
+    <button id="btnCalcular" onclick="calcular()">Calcular</button>
+    
+    <!-- Resultado de la operación -->
+    <p id="resultado"></p>
+
+    <!-- Aviso para operaciones especiales -->
+    <p id="aviso" style="color: red;"></p>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
