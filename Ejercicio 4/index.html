@@ -1,0 +1,39 @@
+<!--
+4. Realizar una página web utilizando HTML y React con sólo dos botones llamados “izquierdo” y 
+“derecho”. Inicialmente solamente el botón “izquierdo” se encuentra habilitado. Al presionar el 
+botón “izquierdo”, se deshabilita a si mismo y luego habilita al botón “derecho”. Luego al presionar 
+el botón “derecho”, se deshabilita a si mismo y luego habilita al botón “izquierdo”. Todo esto 
+permite que solo un botón este habilitado al mismo tiempo
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 4</title>
+    <!-- Enlace al archivo CSS para estilos -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- CDN React y Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Título de la página -->
+    <h1>Botones React</h1>
+
+    <!-- Contenedor principal de la aplicación React -->
+    <div id="root"></div>
+
+    <!-- Código React separado -->
+    <script src="app.jsx" type="text/babel"></script>
+
+    <!-- Render principal -->
+    <script type="text/babel">
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>
+
