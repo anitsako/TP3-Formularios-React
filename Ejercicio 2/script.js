@@ -25,11 +25,11 @@ function filtrarPalabras() {
     mensaje.textContent = "No se encontraron coincidencias.";
   } else {
     resultado.forEach(palabra => {
-    const li = document.createElement("li");
-    const regex = new RegExp(`(${input})`, "gi");
-    const palabraResaltada = palabra.replace(regex, "<mark>$1</mark>");
-    li.innerHTML = palabraResaltada;
-    lista.appendChild(li);
-  });
+      const li = document.createElement("li");
+      const regex = new RegExp(`(${input})`, "gi");
+      const palabraResaltada = palabra.replace(regex, "<mark>$1</mark>");
+      li.innerHTML = palabraResaltada;
+      lista.appendChild(li);
+    });
   }
 }

@@ -26,6 +26,7 @@ function calcular() {
     return;
   }
 
+  // Switch para determinar la operación
   switch (operacion) {
     case "sumar":
       resultado = num1 + num2;
@@ -40,5 +41,6 @@ function calcular() {
         resultado = "Esta operación no está permitida.";
   }
 
+  // Mostrar el resultado
   resultadoElement.textContent = `Resultado: ${resultado}`;
 }

@@ -1,0 +1,31 @@
+<!--
+3. Realiza una petición GET a la API de JSONPlaceholder para obtener todos las "tareas" (/todos). 
+Luego, utiliza forEach y filter para quedarte solo con las tareas que han sido completadas 
+(completed: true) y mostrarlas en el HTML dentro de una lista <ul>.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 3</title>
+        <!-- Enlace al archivo CSS para estilos -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h2>Lista de Tareas Completadas</h2>
+
+        <!-- Contenedor para la lista de tareas -->
+        <button onclick="cargarTareas()">Cargar Tareas Completadas</button>
+
+        <!-- Mensaje de error -->
+        <p id="mensaje"></p>
+
+        <!-- Lista para mostrar las tareas -->
+        <ul id="listaTareas"></ul>
+
+        <!-- Enlace al archivo JavaScript -->
+        <script src = "script.js"></script>
+    </body>
+</html>
