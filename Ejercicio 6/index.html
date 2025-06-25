@@ -1,0 +1,41 @@
+<!--
+ Escribir un programa con HTML+React con formulario que permita calcular el IMC de una 
+persona. Luego de realizar el cálculo, mostrar un mensaje con las siguientes características:
+ • Si IMC < 18.5 mostrar un mensaje en tono amarillo indicando que se trata un nivel bajo.
+ • Si IMC está entre 18.5 y 24.9 mostrar un mensaje en tono verde indicando que se trata de un 
+nivel normal.
+ • Si IMC está entre 25 y 29.9 mostrar un mensaje en tono naranja indicando que se trata de un 
+nivel de sobrepeso.
+ • Si IMC es mayor o igual a 30 mostrar un mensaje en tono rojo indicando que se trata de un 
+nivel de obesidad.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 6</title>
+    <!-- Enlace al archivo CSS para estilos -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- CDN React y Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <h1>IMC en React</h1>
+
+    <!-- Contenedor principal de la aplicación React -->
+    <div id="root"></div>
+
+    <!-- Código React separado -->
+    <script src="app.jsx" type="text/babel"></script>
+
+    <!-- Render principal -->
+    <script type="text/babel">
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>
