@@ -4,6 +4,7 @@ function verificarOperacion() {
   const boton = document.getElementById("btnCalcular");
   const aviso = document.getElementById("aviso");
 
+  // Deshabilitar el botón si la operación es "dividir"
   if (operacion === "dividir") {
     boton.disabled = true;
     aviso.textContent = "La división está deshabilitada";
@@ -21,6 +22,7 @@ function calcular() {
   const resultadoElement = document.getElementById("resultado");
   let resultado;
 
+  // Validar que ambos números sean válidos
   if (isNaN(num1) || isNaN(num2)) {
     resultadoElement.textContent = "Por favor, ingresa ambos números.";
     return;
