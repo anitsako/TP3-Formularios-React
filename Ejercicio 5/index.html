@@ -1,16 +1,17 @@
 <!--
-4. Realizar una página web utilizando HTML y React con sólo dos botones llamados “izquierdo” y 
-“derecho”. Inicialmente solamente el botón “izquierdo” se encuentra habilitado. Al presionar el 
-botón “izquierdo”, se deshabilita a si mismo y luego habilita al botón “derecho”. Luego al presionar 
-el botón “derecho”, se deshabilita a si mismo y luego habilita al botón “izquierdo”. Todo esto 
-permite que solo un botón este habilitado al mismo tiempo
+5. Desarrollar una página web utilizando HTML y React que contenga un formulario para realizar 
+operaciones entre dos números ingresados mediante campos <input>. La operación a realizar 
+(suma, resta, multiplicación o división) debe seleccionarse mediante un elemento <select>. Al hacer 
+clic en el botón "Calcular", se debe ejecutar la operación seleccionada y mostrar el resultado. 
+Condición especial: Si el usuario selecciona la operación de división, el botón "Calcular" debe 
+deshabilitarse, impidiendo que se realice la operación.
 -->
 
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Ejercicio 4</title>
+    <title>Ejercicio 5</title>
     <!-- Enlace al archivo CSS para estilos -->
     <link rel="stylesheet" href="style.css" />
 
@@ -21,7 +22,7 @@ permite que solo un botón este habilitado al mismo tiempo
   </head>
 
   <body>
-    <h1>Botones React</h1>
+    <h1>Calculadora</h1>
 
     <!-- Contenedor principal de la aplicación React -->
     <div id="root"></div>
@@ -35,4 +36,3 @@ permite que solo un botón este habilitado al mismo tiempo
     </script>
   </body>
 </html>
-
