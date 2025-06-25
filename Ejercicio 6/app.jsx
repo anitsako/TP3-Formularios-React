@@ -3,6 +3,7 @@ function App() {
     const [peso, setPeso] = React.useState("");
     const [altura, setAltura] = React.useState("");
     const [mensaje, setMensaje] = React.useState("");
+    const [claseIMC, setClaseIMC] = React.useState("");
 
     // Función para calcular el IMC
     const calcularIMC = () => {
@@ -11,25 +12,32 @@ function App() {
 
         if (isNaN(p) || isNaN(h) || h <= 0) {
             setMensaje("Por favor, ingresa valores válidos");
+            setClaseIMC("aviso");
             return;
         }
 
         // Calcular el IMC
         const imc = p / (h * h);
         let resultado = "";
+        let claseIMC = "";
 
         // Determinar el resultado basado en el IMC
         if (imc < 18.5) {
             resultado = "Bajo peso";
+            claseIMC = "amarillo";
         } else if (imc >= 18.5 && imc < 24.9) {
             resultado = "Peso normal";
+            claseIMC = "verde";
         } else if (imc >= 25 && imc < 29.9) {
             resultado = "Sobrepeso";
+            claseIMC = "naranja";
         } else {
             resultado = "Obesidad";
+            claseIMC = "rojo";
         }
         
         setMensaje(`Tu IMC es ${imc.toFixed(2)} - ${resultado}`);
+        setClaseIMC(claseIMC);
     };
 
     return (
@@ -56,7 +64,7 @@ function App() {
             <button onClick={calcularIMC}>Calcular IMC</button>
             
             {/* Mensaje con el resultado */}
-            <p>{mensaje}</p>
+            <p className={claseIMC}>{mensaje}</p>
         </div>
     );
 }

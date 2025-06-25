@@ -23,3 +23,28 @@ input, button {
     font-size: 16px;
     box-sizing: border-box;
 }
+
+.aviso {
+    color: red;
+    font-style: italic;
+}
+
+.amarillo {
+    color: #e6b800; /* amarillo suave */
+    font-weight: bold;
+}
+
+.verde {
+    color: green;
+    font-weight: bold;
+}
+
+.naranja {
+    color: orange;
+    font-weight: bold;
+}
+
+.rojo {
+    color: red;
+    font-weight: bold;
+}
