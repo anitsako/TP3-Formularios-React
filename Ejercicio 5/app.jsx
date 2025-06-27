@@ -30,6 +30,13 @@ function App() {
       case "multiplicar":
         r = a * b;
         break;
+      case "dividir":
+        if (b === 0) {
+          r = "No se puede dividir por cero.";
+        } else {
+          r = a / b;
+        }
+        break;
       default:
         r = "Operación no válida";
     }
@@ -37,6 +44,9 @@ function App() {
     // Guardar el resultado en el estado
     setResultado(`Resultado: ${r}`);
   };
+
+  // Deshabilitar boton si división seleccionada y num2 es 0
+  const botonDeshabilitado = operacion === "dividir" && parseFloat(num2) === 0;
 
   return (
     <div className="cuadro">
@@ -67,16 +77,16 @@ function App() {
       </select>
 
       {/* Botón que ejecuta el cálculo. Se deshabilita si se elige "dividir" */}
-      <button onClick={calcular} disabled={operacion === "dividir"}>
+      <button onClick={calcular} disabled={botonDeshabilitado}>
         Calcular
       </button>
 
       {/* Mostrar resultado o aviso si la operación es división */}
-      {operacion === "dividir" ? (
-        <p className="aviso">La división está deshabilitada.</p>
-      ) : (
-        <p className="resultado">{resultado}</p>
+      {botonDeshabilitado && (
+        <p className="aviso">No se puede dividir por cero. Corrige el segundo número.</p>
       )}
+
+      {resultado && <p className="resultado">{resultado}</p>}
     </div>
   );
 }
