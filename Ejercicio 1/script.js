@@ -6,7 +6,7 @@ function verificarOperacion() {
   const aviso = document.getElementById("aviso");
 
   // Deshabilitar el botón si la operación es "dividir"
-  if (operacion === "dividir") {
+  if (operacion === "dividir" && num2 === 0) {
     boton.disabled = true;
     aviso.textContent = "Esta operacion no esta permitida";
   } else {
@@ -21,14 +21,14 @@ function calcular() {
   const num2 = parseFloat(document.getElementById("num2").value);
   const operacion = document.getElementById("operacion").value;
   const resultadoElement = document.getElementById("resultado");
-  
-  let resultado;
 
   // Validar que ambos números sean válidos
   if (isNaN(num1) || isNaN(num2)) {
     resultadoElement.textContent = "Por favor, ingresa ambos números";
     return;
   }
+
+  let resultado;
 
   // Switch para determinar la operación
   switch (operacion) {
@@ -42,11 +42,8 @@ function calcular() {
       resultado = num1 * num2;
       break;
     case "dividir":
-      if (num2 === 0) {
-        resultado = "No se puede dividir por cero"
-      } else {
-        resultado = num1/num2
-      }
+      resultado = num1 / num2;
+      break;
     default:
         resultado = "Operacion invalida";
   }
