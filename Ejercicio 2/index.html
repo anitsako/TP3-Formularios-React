@@ -11,7 +11,7 @@ error y no realizar el filtrado.
  • La lista de palabras debe estar precargada en el script (por ejemplo: [“manzana”, “banana”, 
 “pera”, “durazno”, “frutilla”, “mango”]).
  • El filtrado debe actualizar el contenido mostrado en la página, sin recargarla.
- • Debe evitarse el filtrado si no se ingresó ningún texto-
+ • Debe evitarse el filtrado si no se ingresó ningún texto
 -->
 
 <!DOCTYPE html>
@@ -27,9 +27,9 @@ error y no realizar el filtrado.
     <h1>Filtrar Palabras</h1>
 
     <!-- Formulario para ingresar texto y filtrar palabras -->
-     <form>
+    <form onsubmit="event.preventDefault(); filtrarPalabras();">
       <input type="text" id="filtroInput" placeholder="Ingrese una palabra o parte de ella" required>
-      <button type="sumi9trar</button>
+      <button type="submit">Filtrar</button>
 
       <!-- Área de mensajes -->
       <p id="mensaje" class="error"></p>
