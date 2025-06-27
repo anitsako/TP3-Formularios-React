@@ -1,13 +1,14 @@
 // Función para verificar si se debe deshabilitar el botón
 function verificarOperacion() {
   const operacion = document.getElementById("operacion").value;
+  const num2 = parseFloat(document.getElementById("num2").value);
   const boton = document.getElementById("btnCalcular");
   const aviso = document.getElementById("aviso");
 
   // Deshabilitar el botón si la operación es "dividir"
   if (operacion === "dividir") {
     boton.disabled = true;
-    aviso.textContent = "La división está deshabilitada";
+    aviso.textContent = "Esta operacion no esta permitida";
   } else {
     boton.disabled = false;
     aviso.textContent = "";
@@ -20,11 +21,12 @@ function calcular() {
   const num2 = parseFloat(document.getElementById("num2").value);
   const operacion = document.getElementById("operacion").value;
   const resultadoElement = document.getElementById("resultado");
+  
   let resultado;
 
   // Validar que ambos números sean válidos
   if (isNaN(num1) || isNaN(num2)) {
-    resultadoElement.textContent = "Por favor, ingresa ambos números.";
+    resultadoElement.textContent = "Por favor, ingresa ambos números";
     return;
   }
 
@@ -39,8 +41,14 @@ function calcular() {
     case "multiplicar":
       resultado = num1 * num2;
       break;
+    case "dividir":
+      if (num2 === 0) {
+        resultado = "No se puede dividir por cero"
+      } else {
+        resultado = num1/num2
+      }
     default:
-        resultado = "Esta operación no está permitida.";
+        resultado = "Operacion invalida";
   }
 
   // Mostrar el resultado
