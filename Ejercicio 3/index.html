@@ -1,7 +1,7 @@
 <!--
-3. Realiza una petición GET a la API de JSONPlaceholder para obtener todos las "tareas" (/todos). 
-Luego, utiliza forEach y filter para quedarte solo con las tareas que han sido completadas 
-(completed: true) y mostrarlas en el HTML dentro de una lista <ul>.
+3.  Empleando HTML y JavaScript realiza una petición GET a la API de JSONPlaceholder para 
+obtener todos las "tareas" (/todos). Luego, utiliza forEach y filter para quedarte solo con las tareas 
+que han sido completadas (completed: true) y mostrarlas en el HTML dentro de una lista <ul>.
 -->
 
 <!DOCTYPE html>
@@ -17,7 +17,9 @@ Luego, utiliza forEach y filter para quedarte solo con las tareas que han sido c
         <h1>Lista de Tareas Completadas</h1>
 
         <!-- Contenedor para la lista de tareas -->
-        <button onclick="cargarTareas()">Cargar Tareas Completadas</button>
+         <form onsubmit="event.preventDefault(); cargarTareas();">
+            <button type="submit">Cargar Tareas Completadas</button>
+         </form>
 
         <!-- Mensaje de error -->
         <p id="mensaje"></p>
